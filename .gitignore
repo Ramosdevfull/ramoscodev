@@ -1,6 +1,29 @@
 # Compiled class file
 *.class
 
+# SSH Keys
+*.pem
+*.ppk
+
+# Gradle temporary files
+target/
+
+# Maven
+**/.mvn
+
+# Eclipse files
+**/.project
+**/.classpath
+**/.settings
+/bin/
+blog/bin/
+**/.tern-project
+
+# Intellij files
+**/*.iml
+**/.idea
+**/.gradle
+
 # Log file
 *.log
 
