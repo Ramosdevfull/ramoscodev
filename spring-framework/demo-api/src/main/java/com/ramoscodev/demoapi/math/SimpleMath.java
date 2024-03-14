@@ -1,12 +1,5 @@
 package com.ramoscodev.demoapi.math;
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-import com.ramoscodev.demoapi.exceptions.UnsupportedMathOperationException;
-import com.ramoscodev.demoapi.utils.NumberConverter;
-
 public class SimpleMath {
 
 	public Double sum(Double nb01,Double nb02)  {

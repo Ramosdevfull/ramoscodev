@@ -90,8 +90,4 @@ public class Calculator {
 		return Math.sqrt(NumberConverter.convertToDouble(nb01));
 	}
 
-	
-	
-	
-	
 }
