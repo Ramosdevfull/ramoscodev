@@ -1,1 +1,17 @@
-spring.application.name=demo-api
+spring.datasource:
+    url: jdbc:mysql://localhost:3306/demoapidb
+    username: usertodo
+    password: Usertodo16$
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        ddl-auto: update
+logging:
+    level:
+      org:
+        hibernate:
+          type: trace
