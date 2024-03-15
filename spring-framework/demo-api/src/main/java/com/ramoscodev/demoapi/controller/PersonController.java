@@ -26,22 +26,26 @@ public class PersonController {
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public Person findById(@PathVariable(value = "id") String id) {
+	public Person findById(@PathVariable(value = "id") Long id) {
 		return personService.findById(id);
 	}
 	
-	@RequestMapping(value = "/create", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/create", method = RequestMethod.POST, 
+			consumes = MediaType.APPLICATION_JSON_VALUE, 
+			produces = MediaType.APPLICATION_JSON_VALUE)
 	public Person create(@RequestBody Person p) {
 		return personService.create(p);
 	}
 	
-	@RequestMapping(value = "/update", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/update", method = RequestMethod.PUT, 
+			consumes = MediaType.APPLICATION_JSON_VALUE,
+			produces = MediaType.APPLICATION_JSON_VALUE)
 	public Person update(@RequestBody Person p) {
 		return personService.update(p);
 	}
 	
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public Person delete(@PathVariable(value = "id") String id) {
-		return personService.delete(id);
+	public void delete(@PathVariable(value = "id") Long id) {
+		personService.delete(id);
 	}
 }

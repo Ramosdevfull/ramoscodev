@@ -10,6 +10,7 @@ jpa:
       hibernate:
         format_sql: true
         ddl-auto: update
+        dialect: org.hibernate.dialect.MySQL8Dialect
 logging:
     level:
       org:

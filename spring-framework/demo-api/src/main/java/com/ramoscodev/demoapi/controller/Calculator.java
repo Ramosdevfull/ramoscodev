@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ramoscodev.demoapi.exceptions.UnsupportedMathOperationException;
+import com.ramoscodev.demoapi.exceptions.ResourceNotFoundException;
 import com.ramoscodev.demoapi.math.SimpleMath;
 import com.ramoscodev.demoapi.utils.Greeting;
 import com.ramoscodev.demoapi.utils.NumberConverter;
@@ -31,7 +31,7 @@ public class Calculator {
 			@PathVariable(value = "nb02") String nb02
 			) throws Exception {
 		if(!NumberConverter.isNumeric(nb01) || !NumberConverter.isNumeric(nb02)) {
-			throw new UnsupportedMathOperationException("Por favor, Inserir um valor numérico!");
+			throw new ResourceNotFoundException("Por favor, Inserir um valor numérico!");
 		}
 		return math.sum(NumberConverter.convertToDouble(nb01), NumberConverter.convertToDouble(nb02));
 	}
@@ -42,7 +42,7 @@ public class Calculator {
 			@PathVariable(value = "nb02") String nb02
 			) throws Exception {
 		if(!NumberConverter.isNumeric(nb01) || !NumberConverter.isNumeric(nb02)) {
-			throw new UnsupportedMathOperationException("Por favor, Inserir um valor numérico!");
+			throw new ResourceNotFoundException("Por favor, Inserir um valor numérico!");
 		}
 		return math.subtraction(NumberConverter.convertToDouble(nb01), NumberConverter.convertToDouble(nb02));
 	}
@@ -53,7 +53,7 @@ public class Calculator {
 			@PathVariable(value = "nb02") String nb02
 			) throws Exception {
 		if(!NumberConverter.isNumeric(nb01) || !NumberConverter.isNumeric(nb02)) {
-			throw new UnsupportedMathOperationException("Por favor, Inserir um valor numérico!");
+			throw new ResourceNotFoundException("Por favor, Inserir um valor numérico!");
 		}
 		return math.multiplication(NumberConverter.convertToDouble(nb01), NumberConverter.convertToDouble(nb02));
 	}
@@ -64,7 +64,7 @@ public class Calculator {
 			@PathVariable(value = "nb02") String nb02
 			) throws Exception {
 		if(!NumberConverter.isNumeric(nb01) || !NumberConverter.isNumeric(nb02)) {
-			throw new UnsupportedMathOperationException("Por favor, Inserir um valor numérico!");
+			throw new ResourceNotFoundException("Por favor, Inserir um valor numérico!");
 		}
 		return math.division(NumberConverter.convertToDouble(nb01), NumberConverter.convertToDouble(nb02));
 	}
@@ -75,7 +75,7 @@ public class Calculator {
 			@PathVariable(value = "nb02") String nb02
 			) throws Exception {
 		if(!NumberConverter.isNumeric(nb01) || !NumberConverter.isNumeric(nb02)) {
-			throw new UnsupportedMathOperationException("Por favor, Inserir um valor numérico!");
+			throw new ResourceNotFoundException("Por favor, Inserir um valor numérico!");
 		}
 		return math.division(math.sum(NumberConverter.convertToDouble(nb01), NumberConverter.convertToDouble(nb02)), 2D);
 	}
@@ -85,7 +85,7 @@ public class Calculator {
 			@PathVariable(value = "nb01") String nb01
 			) throws Exception {
 		if(!NumberConverter.isNumeric(nb01)) {
-			throw new UnsupportedMathOperationException("Por favor, Inserir um valor numérico!");
+			throw new ResourceNotFoundException("Por favor, Inserir um valor numérico!");
 		}
 		return Math.sqrt(NumberConverter.convertToDouble(nb01));
 	}
